@@ -29,6 +29,7 @@ class RepairsController < ApplicationController
   # POST /repairs.json
   def create
     @repair = Repair.new(repair_params)
+    @repair.user = current_user
 
     respond_to do |format|
       if @repair.save
