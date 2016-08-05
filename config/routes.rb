@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :repairs
+
   resources :categories
 
   resources :vendors

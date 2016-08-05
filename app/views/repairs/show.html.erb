@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @repair.user %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @repair.room %>
+</p>
+
+<%= link_to 'Edit', edit_repair_path(@repair) %> |
+<%= link_to 'Back', repairs_path %>
