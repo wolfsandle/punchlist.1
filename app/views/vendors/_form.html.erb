@@ -1,21 +1,10 @@
-<%= form_for(@vendor) do |f| %>
-  <% if @vendor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
+<%= form_for @vendor, :html => { :class => 'form-horizontal form-model' } do |f| %>
 
-      <ul>
-      <% @vendor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  vendors_path, :class => 'btn btn-default' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
